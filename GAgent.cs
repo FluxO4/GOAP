@@ -12,7 +12,8 @@ public class SubGoal
     public SubGoal(string s, int i, bool r)
     {
         sgoals = new Dictionary<string, int>();
-       // sgoals.Add
+        sgoals.Add(s, i);
+        remove = r;
     }
 
 }
@@ -27,7 +28,7 @@ public class GAgent : MonoBehaviour
     SubGoal currentGoal;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         GAction[] acts = this.GetComponents<GAction>();
         foreach(GAction a in acts)
@@ -50,7 +51,7 @@ public class GAgent : MonoBehaviour
     {
         if(currentAction != null && currentAction.running)
         {
-            if(currentAction.agent.hasPath && currentAction.agent.remainingDistance < 1f)
+            if(currentAction.agent.hasPath && currentAction.agent.remainingDistance < 2f)
             {
                 if (!invoked)
                 {
