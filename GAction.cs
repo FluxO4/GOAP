@@ -19,10 +19,9 @@ public abstract class GAction : MonoBehaviour
     
     public WorldStates agentBeliefs;
 
-    //Specific code
     public GInventory inventory;
+    public WorldStates beliefs;
 
-        //end of specific code
 
     public bool running = false;
 
@@ -52,8 +51,8 @@ public abstract class GAction : MonoBehaviour
             }
         }
 
-        //Specific code
         inventory = GetComponent<GAgent>().inventory;
+        beliefs = GetComponent<GAgent>().beliefs;
     }
 
     public bool IsAchievable()

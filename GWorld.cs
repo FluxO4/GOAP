@@ -44,11 +44,12 @@ public sealed class GWorld
 
         //SPECIFIC CODE vv
         patients = new Queue<GameObject>();
+        cubicles = new Queue<GameObject>();
 
-        GameObject[] cubes = GameObject.FindGameObjectsWithTag("Cubicle");
-        foreach(GameObject cubicle in cubes)
+        GameObject[] cubes = GameObject.FindGameObjectsWithTag("Cubicle");Debug.Log(cubes.Length);
+        foreach(GameObject c in cubes)
         {
-            cubicles.Enqueue(cubicle);
+            cubicles.Enqueue(c);
         }
 
         if (cubes.Length > 0)
