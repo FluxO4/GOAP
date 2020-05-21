@@ -19,6 +19,11 @@ public abstract class GAction : MonoBehaviour
     
     public WorldStates agentBeliefs;
 
+    //Specific code
+    public GInventory inventory;
+
+        //end of specific code
+
     public bool running = false;
 
     public GAction()
@@ -46,6 +51,9 @@ public abstract class GAction : MonoBehaviour
                 effects.Add(w.key, w.value);
             }
         }
+
+        //Specific code
+        inventory = GetComponent<GAgent>().inventory;
     }
 
     public bool IsAchievable()
